@@ -1,0 +1,44 @@
+title: "Kaly's Pizzeria"
+tagline: "Fresh pizzas made live at your event."
+description: "Live vegetarian pizza catering across ECR & OMR, from Adyar to Mahabalipuram. For weddings, corporate events, beach houses, and private parties."
+url: "https://kalysp.github.io"
+baseurl: "/Web"
+
+contact:
+  phone: "+91 00000 00000"
+  email: "hello@kalyspizzeria.com"
+  whatsapp: "910000000000"
+  instagram: "https://www.instagram.com/kalyspizzeria/"
+  maps: "https://maps.google.com"
+
+service_area: "ECR & OMR, from Adyar to Mahabalipuram"
+
+markdown: kramdown
+permalink: /blog/:slug/
+
+paginate: 6
+paginate_path: "/blog/page/:num/"
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "Kaly's Team"
+      draft: false
+
+plugins:
+  - jekyll-paginate
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-feed
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - netlify.toml
+  - .gitignore
+  - docker-compose.yml
+  - vendor/

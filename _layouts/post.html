@@ -1,0 +1,73 @@
+---
+layout: default
+---
+
+<!-- POST HERO -->
+<section class="post-hero">
+  <div class="container">
+    <div class="page-breadcrumb">
+      <a href="{{ site.baseurl }}/">Home</a>
+      <span>›</span>
+      <a href="{{ site.baseurl }}/blog/">Blog</a>
+      <span>›</span>
+      <span>{{ page.title | truncate: 40 }}</span>
+    </div>
+    <div class="post-category-tag">{{ page.category | default: 'Catering' }}</div>
+    <h1 class="post-title">{{ page.title }}</h1>
+    <div class="post-meta">
+      <span>{{ page.date | date: "%B %d, %Y" }}</span>
+      <span>·</span>
+      <span>{{ page.read_time | default: '4' }} min read</span>
+      <span>·</span>
+      <span>By {{ page.author | default: "Kaly's Team" }}</span>
+    </div>
+  </div>
+</section>
+
+<section class="bg-cream">
+  <div class="container">
+    <div class="post-featured-image" aria-hidden="true">
+      <div class="img-placeholder" style="background:linear-gradient(135deg,var(--cream-dark),var(--terracotta-light),var(--terracotta));">
+        <div class="img-placeholder-icon">🍕</div>
+        <div class="img-placeholder-text">{{ page.title }}</div>
+      </div>
+    </div>
+
+    <div class="post-content-wrap">
+      <article class="post-body">
+        {{ content }}
+
+        <!-- POST CTA BANNER -->
+        <div class="post-cta-banner">
+          <div class="post-cta-banner-icon">🍕</div>
+          <div>
+            <h3 class="post-cta-banner-title">Planning a gathering on ECR or OMR?</h3>
+            <p class="post-cta-banner-desc">Explore Kaly's live pizza catering — weddings, corporate events, beach houses, and private parties from Adyar to Mahabalipuram.</p>
+            <a href="{{ site.baseurl }}/book-your-date/" class="btn btn-primary">Book Your Date</a>
+          </div>
+        </div>
+      </article>
+
+      <aside class="post-sidebar">
+        <div class="post-sidebar-card">
+          <h3 class="post-sidebar-card-title">Hosting an event on ECR or OMR?</h3>
+          <p class="post-sidebar-card-desc">Kaly's brings live pizza catering to weddings, corporate events, beach houses, and private parties across ECR & OMR.</p>
+          <a href="{{ site.baseurl }}/book-your-date/" class="btn btn-light btn-sm">Book Your Date →</a>
+        </div>
+
+        {% if site.posts.size > 1 %}
+        <div style="margin-top:24px;">
+          <p style="font-size:.75rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--brown-light);margin-bottom:16px;">More from the blog</p>
+          {% assign related = site.posts | where_exp: "p", "p.url != page.url" | limit: 3 %}
+          {% for post in related %}
+          <a href="{{ post.url | prepend: site.baseurl }}" style="display:block;margin-bottom:16px;padding-bottom:16px;border-bottom:1px solid var(--cream-dark);">
+            <div style="font-size:.7rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--terracotta);margin-bottom:4px;">{{ post.category | default: 'Catering' }}</div>
+            <div style="font-family:var(--font-heading);font-size:.95rem;color:var(--brown);line-height:1.35;">{{ post.title }}</div>
+          </a>
+          {% endfor %}
+        </div>
+        {% endif %}
+      </aside>
+    </div>
+  </div>
+</section>

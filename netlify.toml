@@ -1,0 +1,18 @@
+[build]
+  command   = "bundle exec jekyll build"
+  publish   = "_site"
+
+[build.environment]
+  RUBY_VERSION = "3.2.0"
+  JEKYLL_ENV   = "production"
+
+[[redirects]]
+  from   = "/favicon.ico"
+  to     = "/assets/images/favicon.png"
+  status = 302
+
+[[redirects]]
+  from   = "https://www.kalyspizzeria.com/*"
+  to     = "https://kalyspizzeria.com/:splat"
+  status = 301
+  force  = true

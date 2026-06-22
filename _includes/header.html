@@ -1,0 +1,16 @@
+<header class="site-header" role="banner">
+  <div class="nav-inner">
+    <a href="{{ site.baseurl }}/" class="logo">Kaly's <span>Pizzeria</span></a>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="{{ site.baseurl }}/live-pizza-catering-ecr-omr/"{% if page.url contains 'live-pizza' %} class="active"{% endif %}>Live Catering</a>
+      <a href="{{ site.baseurl }}/menu/"{% if page.url contains '/menu' %} class="active"{% endif %}>Menu</a>
+      <a href="{{ site.baseurl }}/products/"{% if page.url contains '/products' %} class="active"{% endif %}>Products</a>
+      <a href="{{ site.baseurl }}/about/"{% if page.url contains '/about' %} class="active"{% endif %}>About</a>
+      <a href="{{ site.baseurl }}/blog/"{% if page.url contains '/blog' %} class="active"{% endif %}>Blog</a>
+      <a href="{{ site.baseurl }}/book-your-date/" class="btn btn-primary btn-sm nav-cta">Book Your Date</a>
+    </nav>
+    <button class="nav-toggle" onclick="openMobileNav()" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>

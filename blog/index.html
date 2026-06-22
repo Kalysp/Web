@@ -1,0 +1,73 @@
+---
+layout: page
+title: "Blog — Kaly's Pizzeria"
+description: "From ECR events and pizza to catering ideas and the Kaly's way of doing things. Helpful posts for anyone hosting on ECR or OMR."
+permalink: /blog/
+---
+
+<!-- PAGE INTRO -->
+<section class="page-intro">
+  <div class="container">
+    <div class="page-breadcrumb">
+      <a href="{{ site.baseurl }}/">Home</a>
+      <span>›</span>
+      <span>Blog</span>
+    </div>
+    <span class="section-label">From the Blog</span>
+    <h1 class="section-title" style="max-width:600px;">Helpful posts on pizza, events & catering</h1>
+    <p class="section-lead" style="max-width:540px;">ECR events, pizza tips, catering ideas, and the Kaly's way of doing things. For anyone planning a gathering on the coastline.</p>
+  </div>
+</section>
+
+<!-- BLOG POSTS -->
+<section class="bg-cream">
+  <div class="container">
+    {% if site.posts.size > 0 %}
+    <div class="blog-grid">
+      {% for post in site.posts %}
+      <article class="blog-card">
+        <a href="{{ post.url | prepend: site.baseurl }}" class="blog-card-image" aria-label="{{ post.title }}">
+          <div class="img-placeholder" style="background:linear-gradient(135deg,{% cycle 'var(--cream-dark),var(--terracotta-light)','var(--terracotta-light),var(--terracotta)','#e8f0e8,#4a7c59','#1c1208,#4a3520' %});">
+            <div style="font-size:2rem;">{% cycle '🍕','🍅','🏖️','🏢','💍' %}</div>
+          </div>
+        </a>
+        <div class="blog-card-body">
+          <div class="blog-card-category">{{ post.category | default: 'Catering' }}</div>
+          <h2 class="blog-card-title">
+            <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+          </h2>
+          <p class="blog-card-excerpt">{{ post.excerpt | strip_html | truncate: 120 }}</p>
+          <div class="blog-card-meta">
+            <span>{{ post.date | date: "%b %d, %Y" }}</span>
+            <span>{{ post.read_time | default: '4' }} min read</span>
+          </div>
+          <a href="{{ post.url | prepend: site.baseurl }}" class="blog-read-more">Read more →</a>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+    {% else %}
+    <div style="text-align:center;padding:80px 0;">
+      <div style="font-size:3rem;margin-bottom:16px;">🍕</div>
+      <h2 style="font-family:var(--font-heading);margin-bottom:12px;">Blog Coming Soon</h2>
+      <p style="color:var(--brown-light);margin-bottom:28px;">We're working on helpful posts about ECR events, pizza catering, and more.</p>
+      <a href="{{ site.baseurl }}/book-your-date/" class="btn btn-primary">Book Your Date Instead →</a>
+    </div>
+    {% endif %}
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<section class="bg-cream">
+  <div class="container">
+    <div class="cta-band-inner">
+      <span class="section-label" style="color:rgba(250,246,239,.7);text-align:center;display:block;">Planning a gathering?</span>
+      <h2 class="cta-band-title">Bring Kaly's Live Pizza to Your Event</h2>
+      <p class="cta-band-desc">Weddings, corporate events, beach houses, and private parties across ECR & OMR.</p>
+      <div class="btn-group" style="justify-content:center;">
+        <a href="{{ site.baseurl }}/book-your-date/" class="btn btn-light btn-lg">Book Your Date</a>
+        <a href="{{ site.baseurl }}/live-pizza-catering-ecr-omr/" class="btn btn-ghost-cream">View Packages →</a>
+      </div>
+    </div>
+  </div>
+</section>

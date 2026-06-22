@@ -1,0 +1,33 @@
+# ─────────────────────────────────────────────────────
+# Decap CMS config for Kaly's Pizzeria blog
+# Enabled in Phase 2 when deployed to Netlify
+# ─────────────────────────────────────────────────────
+
+backend:
+  name: git-gateway
+  branch: main
+
+site_url: https://kalyspizzeria.com
+display_url: https://kalyspizzeria.com
+
+media_folder: assets/images/posts
+public_folder: /assets/images/posts
+
+collections:
+  - name: posts
+    label: "Blog Posts"
+    folder: _posts
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{fields.slug}}"
+    fields:
+      - { label: "Title",     name: title,     widget: string }
+      - { label: "Slug (URL)", name: slug,     widget: string, hint: "Used in the URL. Lowercase, hyphens only. e.g. how-to-plan-a-pizza-party" }
+      - { label: "Excerpt",   name: excerpt,   widget: text,   hint: "Short summary shown on blog listing page." }
+      - { label: "Category",  name: category,  widget: select, options: ["Catering Tips","Live Catering","Event Planning","Pizza","ECR & OMR","Weddings","Corporate Events","Desserts"] }
+      - { label: "Tags",      name: tags,      widget: list,   required: false }
+      - { label: "Read Time (minutes)", name: read_time, widget: number, default: 4, required: false }
+      - { label: "Featured Image", name: image, widget: image, required: false }
+      - { label: "SEO Title",      name: seo_title,        widget: string,   required: false, hint: "Leave blank to use post title." }
+      - { label: "Meta Description", name: meta_description, widget: text,   required: false, hint: "Leave blank to use excerpt." }
+      - { label: "Featured Post",  name: featured, widget: boolean, default: false }
+      - { label: "Body",     name: body,      widget: markdown }
