@@ -214,15 +214,17 @@ section.section-sm { padding: var(--section-py-sm) 0; }
 }
 
 .logo {
-  font-family: var(--font-heading);
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: var(--brown);
   display: flex;
   align-items: center;
-  gap: 8px;
-  letter-spacing: -.01em;
+  flex-shrink: 0;
 }
+.logo-img {
+  height: 44px;
+  width: auto;
+  display: block;
+  object-fit: contain;
+}
+/* Fallback text style (used if img fails) */
 .logo span { color: var(--terracotta); }
 
 .nav-links {
@@ -1136,13 +1138,16 @@ select.form-control {
 }
 .footer-brand {}
 .footer-logo {
-  font-family: var(--font-heading);
-  font-size: 1.4rem;
-  font-weight: 500;
   margin-bottom: 12px;
-  color: var(--cream);
 }
-.footer-logo span { color: var(--terracotta-light); }
+.footer-logo-img {
+  height: 40px;
+  width: auto;
+  display: block;
+  object-fit: contain;
+  /* Invert to white so the logo is readable on the dark footer */
+  filter: brightness(0) invert(1);
+}
 .footer-tagline { font-size: .875rem; opacity: .6; line-height: 1.6; margin-bottom: 20px; max-width: 240px; }
 .footer-social { display: flex; gap: 10px; }
 .footer-social a {

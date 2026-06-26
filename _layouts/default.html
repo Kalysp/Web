@@ -14,8 +14,8 @@
   <meta property="og:type" content="{% if page.layout == 'post' %}article{% else %}website{% endif %}">
   <meta property="og:site_name" content="{{ site.title }}">
 
-  <!-- Favicon placeholder -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍕</text></svg>">
+  <link rel="icon" type="image/png" href="{{ site.baseurl }}/assets/images/logo/favicon.png">
+  <link rel="apple-touch-icon" href="{{ site.baseurl }}/assets/images/logo/apple-touch-icon.png">
 
   <!-- CSS -->
   <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css">
@@ -36,7 +36,9 @@
 
   <div class="mobile-nav" id="mobileNav" role="dialog" aria-modal="true" aria-label="Navigation">
     <div class="mobile-nav-header">
-      <a href="{{ site.baseurl }}/" class="logo" onclick="closeMobileNav()">Kaly's <span>Pizzeria</span></a>
+      <a href="{{ site.baseurl }}/" class="logo" onclick="closeMobileNav()" aria-label="Kaly's Pizzeria — Home">
+        <img src="{{ site.baseurl }}/assets/images/logo/logo-colour.png" alt="Kaly's Pizzeria" class="logo-img">
+      </a>
       <button class="mobile-nav-close" onclick="closeMobileNav()" aria-label="Close menu">✕</button>
     </div>
     <nav class="mobile-nav-links">

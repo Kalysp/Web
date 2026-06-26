@@ -1,6 +1,8 @@
 <header class="site-header" role="banner">
   <div class="nav-inner">
-    <a href="{{ site.baseurl }}/" class="logo">Kaly's <span>Pizzeria</span></a>
+    <a href="{{ site.baseurl }}/" class="logo" aria-label="Kaly's Pizzeria — Home">
+      <img src="{{ site.baseurl }}/assets/images/logo/logo-colour.png" alt="Kaly's Pizzeria" class="logo-img">
+    </a>
     <nav class="nav-links" aria-label="Main navigation">
       <a href="{{ site.baseurl }}/live-pizza-catering-ecr-omr/"{% if page.url contains 'live-pizza' %} class="active"{% endif %}>Live Catering</a>
       <a href="{{ site.baseurl }}/menu/"{% if page.url contains '/menu' %} class="active"{% endif %}>Menu</a>
